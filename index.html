@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chartkick</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <style type="text/css">
+      body {
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        color: #444;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="//www.google.com/jsapi"></script>
+    <script src="chartkick.js"></script>
+
+    <h1>Goals by Week</h1><div id="chart-1" style="height: 300px;"></div><script>new Chartkick.LineChart("chart-1", [{"name":"Workout","data":[[1359878400,2.0],[1360483200,3.0],[1361088000,3.0],[1361692800,3.0],[1362297600,1.0],[1362902400,4.0],[1363503600,3.0],[1364108400,2.0],[1364713200,3.0]]},{"name":"Go to a concert","data":[[1359878400,1.0],[1360483200,0.0],[1361088000,0.0],[1361692800,0.0],[1362297600,0.0],[1362902400,2.0],[1363503600,1.0],[1364108400,0.0],[1364713200,0.0]]},{"name":"Call parents","data":[[1359878400,0.0],[1360483200,0.0],[1361088000,1.0],[1361692800,0.0],[1362297600,0.0],[1362902400,0.0],[1363503600,1.0],[1364108400,0.0],[1364713200,1.0]]},{"name":"Cook dinner","data":[[1359878400,1.0],[1360483200,5.0],[1361088000,3.0],[1361692800,2.0],[1362297600,0.0],[1362902400,0.0],[1363503600,1.0],[1364108400,1.0],[1364713200,0.0]]},{"name":"Eat breakfast","data":[[1359878400,1.0],[1360483200,3.0],[1361088000,2.0],[1361692800,1.0],[1362297600,0.0],[1362902400,2.0],[1363503600,2.0],[1364108400,3.0],[1364713200,1.0]]}]);</script>
+
+    <h1>Tastiest Fruits</h1><div id="chart-2" style="height: 300px;"></div><script>new Chartkick.PieChart("chart-2", [["Blueberries",51],["Strawberries",26],["Bananas",24],["Apples",23],["Grapes",16]]);</script>
+
+    <h1>Orders by Hour</h1><div id="chart-3" style="height: 300px;"></div><script>new Chartkick.ColumnChart("chart-3", [["12 am",28.0],[" 1 am",16.0],[" 2 am",5.0],[" 3 am",5.0],[" 4 am",3.0],[" 5 am",5.0],[" 6 am",0.0],[" 7 am",1.0],[" 8 am",0.0],[" 9 am",21.0],["10 am",28.0],["11 am",10.0],["12 pm",11.0],[" 1 pm",10.0],[" 2 pm",12.0],[" 3 pm",18.0],[" 4 pm",5.0],[" 5 pm",10.0],[" 6 pm",8.0],[" 7 pm",7.0],[" 8 pm",5.0],[" 9 pm",6.0],["10 pm",11.0],["11 pm",16.0]]);</script>
+
+  </body>
+</html>
