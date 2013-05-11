@@ -137,9 +137,10 @@ new Chartkick.LineChart(document.getElementById("chart-4"), [{"name":"Workout","
 
 <p>For multiple series, use the format</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%</span> <span class="n">series_a</span> <span class="o">=</span> <span class="p">{</span><span class="n">time_0</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span> <span class="n">time_1</span> <span class="o">=&gt;</span> <span class="mi">7</span><span class="p">}</span> <span class="c1"># Hash </span><span class="cp">%&gt;</span><span class="x"></span>
-<span class="cp">&lt;%</span> <span class="n">series_b</span> <span class="o">=</span> <span class="o">[[</span><span class="n">time_0</span><span class="p">,</span> <span class="mi">8</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">time_1</span><span class="p">,</span> <span class="mi">9</span><span class="o">]]</span> <span class="c1"># or Array </span><span class="cp">%&gt;</span><span class="x"></span>
-<span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="o">[</span><span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series A"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_a</span><span class="p">,</span> <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series B"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_b</span><span class="p">}</span><span class="o">]</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="o">[</span>
+  <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series A"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_a</span><span class="p">},</span>
+  <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series B"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_b</span><span class="p">}</span>
+<span class="o">]</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Times can be a time, a timestamp, or a string (strings are parsed)</p>
