@@ -87,7 +87,9 @@ new Chartkick.LineChart(document.getElementById("chart-4"), [{"name":"Workout","
 //]]>
 </script>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">Goal</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">g</span><span class="o">|</span> <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">feats</span><span class="o">.</span><span class="n">group_by_week</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="p">}</span> <span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="vi">@goals</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">goal</span><span class="o">|</span>
+    <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="n">goal</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">goal</span><span class="o">.</span><span class="n">feats</span><span class="o">.</span><span class="n">group_by_week</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="p">}</span>
+<span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <h3>
