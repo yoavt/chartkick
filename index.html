@@ -2,16 +2,28 @@
 <html>
   <head>
     <title>Chartkick</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <style type="text/css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="github.css">
+    <style>
       body {
-        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-        color: #444;
+        padding: 20px;
       }
 
-      h1 {
-        text-align: center;
-        margin-bottom: 0;
+      .container-fluid {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h2, h3 {
+        margin-top: 1em;
+      }
+
+      p {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
       }
     </style>
   </head>
@@ -19,11 +31,167 @@
     <script src="//www.google.com/jsapi"></script>
     <script src="chartkick.js"></script>
 
-    <h1>Goals by Week</h1><div id="chart-1" style="height: 300px;"></div><script>new Chartkick.LineChart("chart-1", [{"name":"Workout","data":[[1359878400,2.0],[1360483200,3.0],[1361088000,3.0],[1361692800,3.0],[1362297600,1.0],[1362902400,4.0],[1363503600,3.0],[1364108400,2.0],[1364713200,3.0]]},{"name":"Go to a concert","data":[[1359878400,1.0],[1360483200,0.0],[1361088000,0.0],[1361692800,0.0],[1362297600,0.0],[1362902400,2.0],[1363503600,1.0],[1364108400,0.0],[1364713200,0.0]]},{"name":"Call parents","data":[[1359878400,0.0],[1360483200,0.0],[1361088000,1.0],[1361692800,0.0],[1362297600,0.0],[1362902400,0.0],[1363503600,1.0],[1364108400,0.0],[1364713200,1.0]]},{"name":"Cook dinner","data":[[1359878400,1.0],[1360483200,5.0],[1361088000,3.0],[1361692800,2.0],[1362297600,0.0],[1362902400,0.0],[1363503600,1.0],[1364108400,1.0],[1364713200,0.0]]},{"name":"Eat breakfast","data":[[1359878400,1.0],[1360483200,3.0],[1361088000,2.0],[1361692800,1.0],[1362297600,0.0],[1362902400,2.0],[1363503600,2.0],[1364108400,3.0],[1364713200,1.0]]}]);</script>
+<a href="https://github.com/ankane/chartkick"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
 
-    <h1>Tastiest Fruits</h1><div id="chart-2" style="height: 300px;"></div><script>new Chartkick.PieChart("chart-2", [["Blueberries",51],["Strawberries",26],["Bananas",24],["Apples",23],["Grapes",16]]);</script>
+    <div class="container-fluid">
+      <div class="page-header">
+        <h1>Chartkick</h1>
+        <p class="lead">Create beautiful Javascript charts with one line of Ruby</p>
+      </div>
 
-    <h1>Orders by Hour</h1><div id="chart-3" style="height: 300px;"></div><script>new Chartkick.ColumnChart("chart-3", [["12 am",28.0],[" 1 am",16.0],[" 2 am",5.0],[" 3 am",5.0],[" 4 am",3.0],[" 5 am",5.0],[" 6 am",0.0],[" 7 am",1.0],[" 8 am",0.0],[" 9 am",21.0],["10 am",28.0],["11 am",10.0],["12 pm",11.0],[" 1 pm",10.0],[" 2 pm",12.0],[" 3 pm",18.0],[" 4 pm",5.0],[" 5 pm",10.0],[" 6 pm",8.0],[" 7 pm",7.0],[" 8 pm",5.0],[" 9 pm",6.0],["10 pm",11.0],["11 pm",16.0]]);</script>
+<p>Works with Rails 3.1+ and most browsers (including IE 6)</p>
+
+<p><img class="emoji" title=":two_hearts:" alt=":two_hearts:" src="https://a248.e.akamai.net/assets.github.com/images/icons/emoji/two_hearts.png" height="20" width="20" align="absmiddle"> A perfect companion to <a href="http://ankane.github.io/groupdate/">groupdate</a></p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="mini-icon mini-icon-link"></span></a>Usage</h2>
+
+<p>Line chart</p>
+
+<div id="chart-1" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script>
+//<![CDATA[
+new Chartkick.LineChart(document.getElementById("chart-1"), {"2013-02-10 00:00:00 -0800":11,"2013-02-11 00:00:00 -0800":6,"2013-02-12 00:00:00 -0800":3,"2013-02-13 00:00:00 -0800":2,"2013-02-14 00:00:00 -0800":5,"2013-02-15 00:00:00 -0800":3,"2013-02-16 00:00:00 -0800":8,"2013-02-17 00:00:00 -0800":6,"2013-02-18 00:00:00 -0800":6,"2013-02-19 00:00:00 -0800":12,"2013-02-20 00:00:00 -0800":5,"2013-02-21 00:00:00 -0800":5,"2013-02-22 00:00:00 -0800":3,"2013-02-23 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":10,"2013-02-25 00:00:00 -0800":1,"2013-02-26 00:00:00 -0800":3,"2013-02-27 00:00:00 -0800":2,"2013-02-28 00:00:00 -0800":3,"2013-03-01 00:00:00 -0800":2,"2013-03-02 00:00:00 -0800":8,"2013-03-03 00:00:00 -0800":1,"2013-03-04 00:00:00 -0800":2,"2013-03-05 00:00:00 -0800":2,"2013-03-06 00:00:00 -0800":5,"2013-03-07 00:00:00 -0800":1,"2013-03-08 00:00:00 -0800":1,"2013-03-09 00:00:00 -0800":1,"2013-03-10 00:00:00 -0800":1,"2013-03-11 00:00:00 -0700":11,"2013-03-12 00:00:00 -0700":2,"2013-03-13 00:00:00 -0700":4,"2013-03-14 00:00:00 -0700":1,"2013-03-15 00:00:00 -0700":1,"2013-03-16 00:00:00 -0700":7,"2013-03-17 00:00:00 -0700":0,"2013-03-18 00:00:00 -0700":9,"2013-03-19 00:00:00 -0700":1,"2013-03-20 00:00:00 -0700":0,"2013-03-21 00:00:00 -0700":3,"2013-03-22 00:00:00 -0700":1,"2013-03-23 00:00:00 -0700":0,"2013-03-24 00:00:00 -0700":3,"2013-03-25 00:00:00 -0700":5,"2013-03-26 00:00:00 -0700":5,"2013-03-27 00:00:00 -0700":3,"2013-03-28 00:00:00 -0700":2,"2013-03-29 00:00:00 -0700":2,"2013-03-30 00:00:00 -0700":2,"2013-03-31 00:00:00 -0700":0,"2013-04-01 00:00:00 -0700":6}, {});
+//]]>
+</script>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>Pie chart</p>
+
+<div id="chart-2" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script>
+//<![CDATA[
+new Chartkick.PieChart(document.getElementById("chart-2"), [["Blueberry",44],["Strawberry",23],["Banana",22],["Apple",21],["Grape",13]], {});
+//]]>
+</script>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">pie_chart</span> <span class="no">Goal</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>Column chart</p>
+
+<div id="chart-3" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script>
+//<![CDATA[
+new Chartkick.ColumnChart(document.getElementById("chart-3"), [["12 am",26],[" 1 am",16],[" 2 am",2],[" 3 am",5],[" 4 am",3],[" 5 am",5],[" 6 am",0],[" 7 am",0],[" 8 am",0],[" 9 am",16],["10 am",21],["11 am",8],["12 pm",8],[" 1 pm",6],[" 2 pm",9],[" 3 pm",9],[" 4 pm",3],[" 5 pm",8],[" 6 pm",3],[" 7 pm",6],[" 8 pm",4],[" 9 pm",5],["10 pm",9],["11 pm",15]], {"max":40});
+//]]>
+</script>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">column_chart</span> <span class="no">Task</span><span class="o">.</span><span class="n">group_by_hour_of_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>Multiple series (except pie chart)</p>
+
+<div id="chart-4" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script>
+//<![CDATA[
+new Chartkick.LineChart(document.getElementById("chart-4"), [{"name":"Workout","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":3,"2013-03-03 00:00:00 -0800":1,"2013-03-10 00:00:00 -0800":4,"2013-03-17 00:00:00 -0700":3,"2013-03-24 00:00:00 -0700":2,"2013-03-31 00:00:00 -0700":3}},{"name":"Go to concert","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":0,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":0}},{"name":"Wash face","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":1}},{"name":"Call parents","data":{"2013-02-10 00:00:00 -0800":5,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":2,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":1,"2013-03-31 00:00:00 -0700":0}},{"name":"Eat breakfast","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":2,"2013-02-24 00:00:00 -0800":1,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":2,"2013-03-24 00:00:00 -0700":3,"2013-03-31 00:00:00 -0700":0}}], {});
+//]]>
+</script>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">Goal</span><span class="o">.</span><span class="n">all</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">g</span><span class="o">|</span> <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">g</span><span class="o">.</span><span class="n">feats</span><span class="o">.</span><span class="n">group_by_week</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="p">}</span> <span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<h3>
+<a name="say-goodbye-to-timeouts" class="anchor" href="#say-goodbye-to-timeouts"><span class="mini-icon mini-icon-link"></span></a>Say Goodbye To Timeouts</h3>
+
+<p>Make your pages load super fast and stop worrying about timeouts.  Give each chart its own endpoint.</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">completed_tasks_charts_path</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>And in your controller, pass the data as JSON.</p>
+
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">ChartsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="k">def</span> <span class="nf">completed_tasks</span>
+    <span class="n">render</span> <span class="ss">:json</span> <span class="o">=&gt;</span> <span class="no">Task</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:completed_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+
+<p><strong>Note:</strong> This feature requires jQuery at the moment.</p>
+
+<h3>
+<a name="options" class="anchor" href="#options"><span class="mini-icon mini-icon-link"></span></a>Options</h3>
+
+<p>id and height</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="s2">"users-chart"</span><span class="p">,</span> <span class="ss">:height</span> <span class="o">=&gt;</span> <span class="s2">"500px"</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>min and max values (except pie chart)</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:min</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span> <span class="ss">:max</span> <span class="o">=&gt;</span> <span class="mi">5000</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p><strong>Note:</strong> min defaults to 0 - use <code>:min =&gt; nil</code> to allow the chart to choose the minimum.</p>
+
+<h3>
+<a name="data" class="anchor" href="#data"><span class="mini-icon mini-icon-link"></span></a>Data</h3>
+
+<p>Pass data as a Hash or Array</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">pie_chart</span><span class="p">({</span><span class="s2">"Football"</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"Basketball"</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">})</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%=</span> <span class="n">pie_chart</span> <span class="o">[[</span><span class="s2">"Football"</span><span class="p">,</span> <span class="mi">10</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">"Basketball"</span><span class="p">,</span> <span class="mi">5</span><span class="o">]]</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>For multiple series, use the format</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%</span> <span class="n">series_a</span> <span class="o">=</span> <span class="p">{</span><span class="n">time_0</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span> <span class="n">time_1</span> <span class="o">=&gt;</span> <span class="mi">7</span><span class="p">}</span> <span class="c1"># Hash </span><span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%</span> <span class="n">series_b</span> <span class="o">=</span> <span class="o">[[</span><span class="n">time_0</span><span class="p">,</span> <span class="mi">8</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">time_1</span><span class="p">,</span> <span class="mi">9</span><span class="o">]]</span> <span class="c1"># or Array </span><span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="o">[</span><span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series A"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_a</span><span class="p">,</span> <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series B"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_b</span><span class="p">}</span><span class="o">]</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>Times can be a time, a timestamp, or a string (strings are parsed)</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%</span> <span class="n">line_chart</span><span class="p">({</span><span class="mi">20</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">ago</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1368174456</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"2013-05-07 00:00:00 UTC"</span> <span class="o">=&gt;</span> <span class="mi">7</span><span class="p">})</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="mini-icon mini-icon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight"><pre><span class="n">gem</span> <span class="s2">"chartkick"</span>
+</pre></div>
+
+<p>And add the javascript files to your views.</p>
+
+<div class="highlight"><pre><span class="x">&lt;!-- 1. Google Charts first --&gt;</span>
+<span class="x">&lt;!-- 2. chartkick.js runs as a Rails engine - no need to install it --&gt;</span>
+<span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"//www.google.com/jsapi"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>If you prefer Highcharts, use:</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"path/to/highcharts.js"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<h2>
+<a name="no-ruby-no-problem" class="anchor" href="#no-ruby-no-problem"><span class="mini-icon mini-icon-link"></span></a>No Ruby? No Problem</h2>
+
+<p>Chartkick doesn’t require Ruby.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/chartkick.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chart-1"</span> <span class="na">style=</span><span class="s">"height: 300px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"chart-1"</span><span class="p">);</span>
+  <span class="k">new</span> <span class="nx">Chartkick</span><span class="p">.</span><span class="nx">PieChart</span><span class="p">(</span><span class="nx">chart</span><span class="p">,</span> <span class="p">{</span><span class="s2">"Football"</span><span class="o">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s2">"Soccer"</span><span class="o">:</span> <span class="mi">56</span><span class="p">,</span> <span class="s2">"Basketball"</span><span class="o">:</span> <span class="mi">98</span><span class="p">});</span>
+  <span class="c1">// or remote</span>
+  <span class="k">new</span> <span class="nx">Chartkick</span><span class="p">.</span><span class="nx">LineChart</span><span class="p">(</span><span class="nx">chart</span><span class="p">,</span> <span class="s2">"/charts/stocks"</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p>Download <a href="https://raw.github.com/ankane/chartkick/master/app/assets/javascripts/chartkick.js">chartkick.js</a></p>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="mini-icon mini-icon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
 
   </body>
 </html>
