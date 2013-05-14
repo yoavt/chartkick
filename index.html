@@ -159,6 +159,8 @@ new Chartkick.LineChart(document.getElementById("chart-4"), [{"name":"Workout","
 
 <p>And add the javascript files to your views. <code>chartkick.js</code> runs as a Rails engine - no need to install it.</p>
 
+<p><strong>Note:</strong> These files must be included <strong>before</strong> the helper methods.</p>
+
 <p>For Google Charts, use:</p>
 
 <div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"//www.google.com/jsapi"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
