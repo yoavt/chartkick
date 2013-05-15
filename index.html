@@ -125,8 +125,6 @@ new Chartkick.LineChart(document.getElementById("chart-4"), [{"name":"Workout","
 <div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:min</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span> <span class="ss">:max</span> <span class="o">=&gt;</span> <span class="mi">5000</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
-<p><strong>Note:</strong> min defaults to 0 - use <code>:min =&gt; nil</code> to allow the chart to choose the minimum.</p>
-
 <h3>
 <a name="data" class="anchor" href="#data"><span class="mini-icon mini-icon-link"></span></a>Data</h3>
 
