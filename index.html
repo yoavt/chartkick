@@ -25,17 +25,17 @@
         margin-bottom: 1.5em;
       }
     </style>
-  </head>
-  <body>
     <script src="//www.google.com/jsapi"></script>
     <script src="chartkick.js"></script>
-
-<a href="https://github.com/ankane/chartkick"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 1000;" src="ribbon.png" alt="Fork me on GitHub"></a>
+  </head>
+  <body>
+    <a href="https://github.com/ankane/chartkick"><img style="position: fixed; top: 0; right: 0; border: 0; z-index: 1000;" src="ribbon.png" alt="Fork me on GitHub"></a>
 
     <div class="container-fluid">
       <div class="page-header">
         <h1>Chartkick</h1>
         <p class="lead">Create beautiful Javascript charts with one line of Ruby</p>
+        <div class="alert">For other languages, check out <a href="https://github.com/ankane/chartkick.js">chartkick.js</a></div>
       </div>
 
 <p>Simplify your admin dashboard - create new charts in seconds!</p>
@@ -170,23 +170,6 @@ new Chartkick.LineChart(document.getElementById("chart-4"), [{"name":"Workout","
 
 <div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"path/to/highcharts.js"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
-
-<h2>
-<a name="no-ruby-no-problem" class="anchor" href="#no-ruby-no-problem"><span class="mini-icon mini-icon-link"></span></a>No Ruby? No Problem</h2>
-
-<p>Chartkick doesn’t require Ruby.</p>
-
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/path/to/chartkick.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"chart-1"</span> <span class="na">style=</span><span class="s">"height: 300px;"</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;script&gt;</span>
-  <span class="kd">var</span> <span class="nx">chart</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"chart-1"</span><span class="p">);</span>
-  <span class="k">new</span> <span class="nx">Chartkick</span><span class="p">.</span><span class="nx">PieChart</span><span class="p">(</span><span class="nx">chart</span><span class="p">,</span> <span class="p">{</span><span class="s2">"Football"</span><span class="o">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s2">"Soccer"</span><span class="o">:</span> <span class="mi">56</span><span class="p">,</span> <span class="s2">"Basketball"</span><span class="o">:</span> <span class="mi">98</span><span class="p">});</span>
-  <span class="c1">// or remote</span>
-  <span class="k">new</span> <span class="nx">Chartkick</span><span class="p">.</span><span class="nx">LineChart</span><span class="p">(</span><span class="nx">chart</span><span class="p">,</span> <span class="s2">"/charts/stocks"</span><span class="p">);</span>
-<span class="nt">&lt;/script&gt;</span>
-</pre></div>
-
-<p>Download <a href="https://raw.github.com/ankane/chartkick/master/app/assets/javascripts/chartkick.js">chartkick.js</a></p>
 
 <h2>
 <a name="contributing" class="anchor" href="#contributing"><span class="mini-icon mini-icon-link"></span></a>Contributing</h2>
