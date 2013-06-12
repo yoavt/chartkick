@@ -115,14 +115,19 @@ new Chartkick.LineChart(document.getElementById("chart-4"), [{"name":"Workout","
 <h3>
 <a name="options" class="anchor" href="#options"><span class="mini-icon mini-icon-link"></span></a>Options</h3>
 
-<p>id and height</p>
+<p>Id and height</p>
 
 <div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="s2">"users-chart"</span><span class="p">,</span> <span class="ss">:height</span> <span class="o">=&gt;</span> <span class="s2">"500px"</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
-<p>min and max values (except pie chart)</p>
+<p>Min and max values (except pie chart)</p>
 
 <div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:min</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span> <span class="ss">:max</span> <span class="o">=&gt;</span> <span class="mi">5000</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>You can pass options directly to the charting library with:</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:library</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:backgroundColor</span> <span class="o">=&gt;</span> <span class="s2">"#eee"</span><span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <h3>
