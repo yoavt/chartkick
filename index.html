@@ -124,6 +124,17 @@ new Chartkick.LineChart("chart-4", [{"name":"Workout","data":{"2013-02-10 00:00:
 <div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:library</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:backgroundColor</span> <span class="o">=&gt;</span> <span class="s2">"#eee"</span><span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
+<p>You can also pass a content_for option, which will put the javascript in a content block.  This is great for including all of your javascript at the bottom of the page.</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:content_for</span> <span class="o">=&gt;</span> <span class="ss">:js_initialization</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>Then, in your layout:</p>
+
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="ss">:js_initialization</span> <span class="c1"># Rails </span><span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%=</span> <span class="n">yield_content</span> <span class="ss">:js_initialization</span> <span class="c1"># Padrino </span><span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
 <h3>
 <a name="data" class="anchor" href="#data"><span class="mini-icon mini-icon-link"></span></a>Data</h3>
 
@@ -154,7 +165,7 @@ new Chartkick.LineChart("chart-4", [{"name":"Workout","data":{"2013-02-10 00:00:
 <div class="highlight"><pre><span class="n">gem</span> <span class="s2">"chartkick"</span>
 </pre></div>
 
-<p>And add the javascript files to your views.  These files must be included <strong>before</strong> the helper methods.</p>
+<p>And add the javascript files to your views.  These files must be included <strong>before</strong> the helper methods, unless using the <code>:content_for</code> option.</p>
 
 <p>For Google Charts, use:</p>
 
