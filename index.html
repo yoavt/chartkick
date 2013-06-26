@@ -131,8 +131,8 @@ new Chartkick.LineChart("chart-4", [{"name":"Workout","data":{"2013-02-10 00:00:
 
 <p>Then, in your layout:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="ss">:js_initialization</span> <span class="c1"># Rails </span><span class="cp">%&gt;</span><span class="x"></span>
-<span class="cp">&lt;%=</span> <span class="n">yield_content</span> <span class="ss">:js_initialization</span> <span class="c1"># Padrino </span><span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="ss">:js_initialization</span> <span class="cp">%&gt;</span><span class="x"> </span><span class="cp">&lt;%#</span><span class="c"> Rails </span><span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%=</span> <span class="n">yield_content</span> <span class="ss">:js_initialization</span> <span class="cp">%&gt;</span><span class="x"> </span><span class="cp">&lt;%#</span><span class="c"> Padrino </span><span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <h3>
