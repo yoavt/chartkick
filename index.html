@@ -42,7 +42,7 @@
 
 <p>Works with Rails, Sinatra and most browsers (including IE 6)</p>
 
-<p><img class="emoji" title=":two_hearts:" alt=":two_hearts:" src="https://a248.e.akamai.net/assets.github.com/images/icons/emoji/two_hearts.png" height="20" width="20" align="absmiddle"> A perfect companion to <a href="http://ankane.github.io/groupdate/">groupdate</a></p>
+<p><img class="emoji" title=":two_hearts:" alt=":two_hearts:" src="https://github.global.ssl.fastly.net/images/icons/emoji/two_hearts.png" height="20" width="20" align="absmiddle"> A perfect companion to <a href="http://ankane.github.io/groupdate/">groupdate</a> and <a href="https://github.com/ankane/active_median">active_median</a></p>
 
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="mini-icon mini-icon-link"></span></a>Usage</h2>
@@ -85,7 +85,7 @@ new Chartkick.ColumnChart("chart-3", [["0",32],["1",46],["2",28],["3",21],["4",2
   new Chartkick.BarChart("chart-4", [["X-Small",5],["Small",27],["Medium",10],["Large",14],["X-Large",10]], {});
 </script>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">bar_chart</span> <span class="no">Shirt</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"size"</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">bar_chart</span> <span class="no">Shirt</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"size"</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="ss">:price</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Area chart</p>
@@ -97,7 +97,7 @@ new Chartkick.ColumnChart("chart-3", [["0",32],["1",46],["2",28],["3",21],["4",2
   new Chartkick.AreaChart("chart-5", {"2013-07-27 07:00:00 UTC":2,"2013-07-27 07:01:00 UTC":5,"2013-07-27 07:02:00 UTC":3,"2013-07-27 07:03:00 UTC":3,"2013-07-27 07:04:00 UTC":2,"2013-07-27 07:05:00 UTC":5,"2013-07-27 07:06:00 UTC":1,"2013-07-27 07:07:00 UTC":3,"2013-07-27 07:08:00 UTC":4,"2013-07-27 07:09:00 UTC":3,"2013-07-27 07:10:00 UTC":2}, {});
 </script>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">area_chart</span> <span class="no">Visit</span><span class="o">.</span><span class="n">group_by_minute</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">area_chart</span> <span class="no">Visit</span><span class="o">.</span><span class="n">group_by_minute</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="ss">:load_time</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Multiple series (except pie chart)</p>
