@@ -56,6 +56,10 @@ new Chartkick.LineChart("chart-1", {"2013-02-10 00:00:00 -0800":11,"2013-02-11 0
 <div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
+<div class="alert">
+  You must have <a href="https://github.com/ankane/groupdate">groupdate</a> installed to use the group_by_day method
+</div>
+
 <p>Pie chart</p>
 
 <div id="chart-2" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script>
