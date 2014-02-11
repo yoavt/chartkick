@@ -116,16 +116,16 @@ new Chartkick.LineChart("chart-6", [{"name":"Workout","data":{"2013-02-10 00:00:
 </pre></div>
 
 <h3>
-<a name="say-goodbye-to-timeouts" class="anchor" href="#say-goodbye-to-timeouts"><span class="mini-icon mini-icon-link"></span></a>Say Goodbye To Timeouts</h3>
+<a name="say-goodbye-to-timeouts" class="anchor" href="#say-goodbye-to-timeouts"><span class="octicon octicon-link"></span></a>Say Goodbye To Timeouts</h3>
 
 <p>Make your pages load super fast and stop worrying about timeouts.  Give each chart its own endpoint.</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">completed_tasks_charts_path</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">completed_tasks_charts_path</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>And in your controller, pass the data as JSON.</p>
 
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">ChartsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+<div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">ChartsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
   <span class="k">def</span> <span class="nf">completed_tasks</span>
     <span class="n">render</span> <span class="ss">:json</span> <span class="o">=&gt;</span> <span class="no">Task</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:completed_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
   <span class="k">end</span>
@@ -135,46 +135,51 @@ new Chartkick.LineChart("chart-6", [{"name":"Workout","data":{"2013-02-10 00:00:
 <p><strong>Note:</strong> This feature requires jQuery at the moment.</p>
 
 <h3>
-<a name="options" class="anchor" href="#options"><span class="mini-icon mini-icon-link"></span></a>Options</h3>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
 
 <p>Id and height</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="s2">"users-chart"</span><span class="p">,</span> <span class="ss">:height</span> <span class="o">=&gt;</span> <span class="s2">"500px"</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="s2">"users-chart"</span><span class="p">,</span> <span class="ss">:height</span> <span class="o">=&gt;</span> <span class="s2">"500px"</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Min and max values (except pie chart)</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:min</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span> <span class="ss">:max</span> <span class="o">=&gt;</span> <span class="mi">5000</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:min</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span> <span class="ss">:max</span> <span class="o">=&gt;</span> <span class="mi">5000</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>Stacked columns or bars [master]</p>
+
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">column_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:stacked</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>You can pass options directly to the charting library with:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:library</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:backgroundColor</span> <span class="o">=&gt;</span> <span class="s2">"#eee"</span><span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:library</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:backgroundColor</span> <span class="o">=&gt;</span> <span class="s2">"#eee"</span><span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>You can also pass a content_for option, which will put the javascript in a content block.  This is great for including all of your javascript at the bottom of the page.</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="no">User</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">,</span> <span class="ss">:content_for</span> <span class="o">=&gt;</span> <span class="ss">:charts_js</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:content_for</span> <span class="o">=&gt;</span> <span class="ss">:charts_js</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Then, in your layout:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="ss">:charts_js</span> <span class="cp">%&gt;</span><span class="x"> </span><span class="cp">&lt;%#</span><span class="c"> Rails </span><span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="ss">:charts_js</span> <span class="cp">%&gt;</span><span class="x"> </span><span class="cp">&lt;%#</span><span class="c"> Rails </span><span class="cp">%&gt;</span><span class="x"></span>
 <span class="cp">&lt;%=</span> <span class="n">yield_content</span> <span class="ss">:charts_js</span> <span class="cp">%&gt;</span><span class="x"> </span><span class="cp">&lt;%#</span><span class="c"> Padrino </span><span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <h3>
-<a name="data" class="anchor" href="#data"><span class="mini-icon mini-icon-link"></span></a>Data</h3>
+<a name="data" class="anchor" href="#data"><span class="octicon octicon-link"></span></a>Data</h3>
 
 <p>Pass data as a Hash or Array</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">pie_chart</span><span class="p">({</span><span class="s2">"Football"</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"Basketball"</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">})</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">pie_chart</span><span class="p">({</span><span class="s2">"Football"</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"Basketball"</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">})</span> <span class="cp">%&gt;</span><span class="x"></span>
 <span class="cp">&lt;%=</span> <span class="n">pie_chart</span> <span class="o">[[</span><span class="s2">"Football"</span><span class="p">,</span> <span class="mi">10</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">"Basketball"</span><span class="p">,</span> <span class="mi">5</span><span class="o">]]</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>For multiple series, use the format</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="o">[</span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="o">[</span>
   <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series A"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_a</span><span class="p">},</span>
   <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series B"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_b</span><span class="p">}</span>
 <span class="o">]</span> <span class="cp">%&gt;</span><span class="x"></span>
@@ -182,7 +187,7 @@ new Chartkick.LineChart("chart-6", [{"name":"Workout","data":{"2013-02-10 00:00:
 
 <p>Times can be a time, a timestamp, or a string (strings are parsed)</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span><span class="p">({</span><span class="mi">20</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">ago</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1368174456</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"2013-05-07 00:00:00 UTC"</span> <span class="o">=&gt;</span> <span class="mi">7</span><span class="p">})</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span><span class="p">({</span><span class="mi">20</span><span class="o">.</span><span class="n">day</span><span class="o">.</span><span class="n">ago</span> <span class="o">=&gt;</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1368174456</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"2013-05-07 00:00:00 UTC"</span> <span class="o">=&gt;</span> <span class="mi">7</span><span class="p">})</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <h2>
@@ -190,19 +195,19 @@ new Chartkick.LineChart("chart-6", [{"name":"Workout","data":{"2013-02-10 00:00:
 
 <p>Add this line to your application's Gemfile:</p>
 
-<div class="highlight"><pre><span class="n">gem</span> <span class="s2">"chartkick"</span>
+<div class="highlight highlight-ruby"><pre><span class="n">gem</span> <span class="s2">"chartkick"</span>
 </pre></div>
 
 <p>And add the javascript files to your views.  These files must be included <strong>before</strong> the helper methods, unless using the <code>:content_for</code> option.</p>
 
 <p>For Google Charts, use:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"//www.google.com/jsapi"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"//www.google.com/jsapi"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>If you prefer Highcharts, use:</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"path/to/highcharts.js"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"path/to/highcharts.js"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <h3>
@@ -220,7 +225,7 @@ new Chartkick.LineChart("chart-6", [{"name":"Workout","data":{"2013-02-10 00:00:
 
 <p>You must include <code>chartkick.js</code> manually.  <a href="https://raw.github.com/ankane/chartkick/master/app/assets/javascripts/chartkick.js">Download it here</a></p>
 
-<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//www.google.com/jsapi"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//www.google.com/jsapi"</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"chartkick.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
@@ -231,11 +236,28 @@ new Chartkick.LineChart("chart-6", [{"name":"Workout","data":{"2013-02-10 00:00:
 
 <p>In addition, you must specify <code>http</code> or <code>https</code> if you use Google Charts, since Padrino tries to append <code>.js</code> to protocol relative urls.</p>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"https://www.google.com/jsapi"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s2">"https://www.google.com/jsapi"</span><span class="p">,</span> <span class="s2">"chartkick"</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
+<h3>
+<a name="localization" class="anchor" href="#localization"><span class="octicon octicon-link"></span></a>Localization</h3>
+
+<p>To specify a language for Google Charts, add:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script&gt;</span>
+  <span class="kd">var</span> <span class="nx">Chartkick</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"language"</span><span class="o">:</span> <span class="s2">"de"</span><span class="p">};</span>
+<span class="nt">&lt;/script&gt;</span>
+</pre></div>
+
+<p><strong>before</strong> the javascript files.</p>
+
 <h2>
-<a name="history" class="anchor" href="#history"><span class="mini-icon mini-icon-link"></span></a>History</h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Chartkick uses <a href="https://github.com/Do/iso8601.js">iso8601.js</a> to parse dates and times.</p>
+
+<h2>
+<a name="history" class="anchor" href="#history"><span class="octicon octicon-link"></span></a>History</h2>
 
 <p>View the <a href="https://github.com/ankane/chartkick/blob/master/CHANGELOG.md">changelog</a></p>
 
