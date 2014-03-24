@@ -63,12 +63,10 @@ new Chartkick.LineChart("chart-1", {"2013-02-10 00:00:00 -0800":11,"2013-02-11 0
 <p>Pie chart</p>
 
 <div id="chart-2" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script>
-//<![CDATA[
 new Chartkick.PieChart(document.getElementById("chart-2"), [["Blueberry",44],["Strawberry",23],["Banana",22],["Apple",21],["Grape",13]], {});
-//]]>
 </script>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">pie_chart</span> <span class="no">Goal</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"name"</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">pie_chart</span> <span class="no">Goal</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="ss">:name</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Column chart</p>
@@ -77,7 +75,7 @@ new Chartkick.PieChart(document.getElementById("chart-2"), [["Blueberry",44],["S
 new Chartkick.ColumnChart("chart-3", [["0",32],["1",46],["2",28],["3",21],["4",20],["5",13],["6",27]], {});
 </script>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">column_chart</span> <span class="no">Task</span><span class="o">.</span><span class="n">group_by_day_of_week</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">column_chart</span> <span class="no">Task</span><span class="o">.</span><span class="n">group_by_hour_of_day</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">,</span> <span class="nb">format</span><span class="p">:</span> <span class="s2">"%l %P"</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Bar chart</p>
@@ -89,7 +87,7 @@ new Chartkick.ColumnChart("chart-3", [["0",32],["1",46],["2",28],["3",21],["4",2
   new Chartkick.BarChart("chart-4", [["X-Small",5],["Small",27],["Medium",10],["Large",14],["X-Large",10]], {});
 </script>
 
-<div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">bar_chart</span> <span class="no">Shirt</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">"size"</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="ss">:price</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">bar_chart</span> <span class="no">Shirt</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="ss">:size</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="ss">:price</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Area chart</p>
@@ -104,10 +102,22 @@ new Chartkick.ColumnChart("chart-3", [["0",32],["1",46],["2",28],["3",21],["4",2
 <div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">area_chart</span> <span class="no">Visit</span><span class="o">.</span><span class="n">group_by_minute</span><span class="p">(</span><span class="ss">:created_at</span><span class="p">)</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="ss">:load_time</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
+<p>Geo chart</p>
+
+<div id="chart-6" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">
+  Loading...
+</div>
+<script type="text/javascript">
+  new Chartkick.GeoChart("chart-6", [["United States",101],["Russia",63],["Germany",65],["China",50],["France",37],["Italy",35],["Australia",41]], {});
+</script>
+
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">geo_chart</span> <span class="no">Medal</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="ss">:country</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
 <p>Multiple series (except pie chart)</p>
 
-<div id="chart-6" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script>
-new Chartkick.LineChart("chart-6", [{"name":"Workout","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":3,"2013-03-03 00:00:00 -0800":1,"2013-03-10 00:00:00 -0800":4,"2013-03-17 00:00:00 -0700":3,"2013-03-24 00:00:00 -0700":2,"2013-03-31 00:00:00 -0700":3}},{"name":"Go to concert","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":0,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":0}},{"name":"Wash face","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":1}},{"name":"Call parents","data":{"2013-02-10 00:00:00 -0800":5,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":2,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":1,"2013-03-31 00:00:00 -0700":0}},{"name":"Eat breakfast","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":2,"2013-02-24 00:00:00 -0800":1,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":2,"2013-03-24 00:00:00 -0700":3,"2013-03-31 00:00:00 -0700":0}}], {});
+<div id="chart-7" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script>
+new Chartkick.LineChart("chart-7", [{"name":"Workout","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":3,"2013-03-03 00:00:00 -0800":1,"2013-03-10 00:00:00 -0800":4,"2013-03-17 00:00:00 -0700":3,"2013-03-24 00:00:00 -0700":2,"2013-03-31 00:00:00 -0700":3}},{"name":"Go to concert","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":0,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":0}},{"name":"Wash face","data":{"2013-02-10 00:00:00 -0800":0,"2013-02-17 00:00:00 -0800":1,"2013-02-24 00:00:00 -0800":0,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":0,"2013-03-31 00:00:00 -0700":1}},{"name":"Call parents","data":{"2013-02-10 00:00:00 -0800":5,"2013-02-17 00:00:00 -0800":3,"2013-02-24 00:00:00 -0800":2,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":0,"2013-03-17 00:00:00 -0700":1,"2013-03-24 00:00:00 -0700":1,"2013-03-31 00:00:00 -0700":0}},{"name":"Eat breakfast","data":{"2013-02-10 00:00:00 -0800":3,"2013-02-17 00:00:00 -0800":2,"2013-02-24 00:00:00 -0800":1,"2013-03-03 00:00:00 -0800":0,"2013-03-10 00:00:00 -0800":2,"2013-03-17 00:00:00 -0700":2,"2013-03-24 00:00:00 -0700":3,"2013-03-31 00:00:00 -0700":0}}], {});
 </script>
 
 <div class="highlight"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="vi">@goals</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">goal</span><span class="o">|</span>
@@ -127,45 +137,55 @@ new Chartkick.LineChart("chart-6", [{"name":"Workout","data":{"2013-02-10 00:00:
 
 <div class="highlight highlight-ruby"><pre><span class="k">class</span> <span class="nc">ChartsController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
   <span class="k">def</span> <span class="nf">completed_tasks</span>
-    <span class="n">render</span> <span class="ss">:json</span> <span class="o">=&gt;</span> <span class="no">Task</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:completed_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
+    <span class="n">render</span> <span class="ss">json</span><span class="p">:</span> <span class="no">Task</span><span class="o">.</span><span class="n">group_by_day</span><span class="p">(</span><span class="ss">:completed_at</span><span class="p">)</span><span class="o">.</span><span class="n">count</span>
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
 
-<p><strong>Note:</strong> This feature requires jQuery at the moment.</p>
+<p><strong>Note:</strong> This feature requires <a href="http://jquery.com/">jQuery</a> or <a href="http://zeptojs.com/">Zepto</a> at the moment.</p>
 
 <h3>
 <a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
 
 <p>Id and height</p>
 
-<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:id</span> <span class="o">=&gt;</span> <span class="s2">"users-chart"</span><span class="p">,</span> <span class="ss">:height</span> <span class="o">=&gt;</span> <span class="s2">"500px"</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="nb">id</span><span class="p">:</span> <span class="s2">"users-chart"</span><span class="p">,</span> <span class="ss">height</span><span class="p">:</span> <span class="s2">"500px"</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Min and max values (except pie chart)</p>
 
-<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:min</span> <span class="o">=&gt;</span> <span class="mi">1000</span><span class="p">,</span> <span class="ss">:max</span> <span class="o">=&gt;</span> <span class="mi">5000</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">min</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="ss">max</span><span class="p">:</span> <span class="mi">5000</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
-<p>Stacked columns or bars [master]</p>
+<p>Stacked columns or bars</p>
 
-<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">column_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:stacked</span> <span class="o">=&gt;</span> <span class="kp">true</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">column_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">stacked</span><span class="p">:</span> <span class="kp">true</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>Discrete axis</p>
+
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">discrete</span><span class="p">:</span> <span class="kp">true</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>You can pass options directly to the charting library with:</p>
 
-<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:library</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="ss">:backgroundColor</span> <span class="o">=&gt;</span> <span class="s2">"#eee"</span><span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">library</span><span class="p">:</span> <span class="p">{</span><span class="ss">backgroundColor</span><span class="p">:</span> <span class="s2">"#eee"</span><span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>You can also pass a content_for option, which will put the javascript in a content block.  This is great for including all of your javascript at the bottom of the page.</p>
 
-<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="ss">:content_for</span> <span class="o">=&gt;</span> <span class="ss">:charts_js</span> <span class="cp">%&gt;</span><span class="x"></span>
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="n">data</span><span class="p">,</span> <span class="n">content_for</span><span class="p">:</span> <span class="ss">:charts_js</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
 <p>Then, in your layout:</p>
 
 <div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="ss">:charts_js</span> <span class="cp">%&gt;</span><span class="x"> </span><span class="cp">&lt;%#</span><span class="c"> Rails </span><span class="cp">%&gt;</span><span class="x"></span>
 <span class="cp">&lt;%=</span> <span class="n">yield_content</span> <span class="ss">:charts_js</span> <span class="cp">%&gt;</span><span class="x"> </span><span class="cp">&lt;%#</span><span class="c"> Padrino </span><span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
+<p>To make this the default, create an initializer with:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="no">Chartkick</span><span class="o">.</span><span class="n">content_for</span> <span class="o">=</span> <span class="ss">:charts_js</span>
 </pre></div>
 
 <h3>
@@ -180,8 +200,8 @@ new Chartkick.LineChart("chart-6", [{"name":"Workout","data":{"2013-02-10 00:00:
 <p>For multiple series, use the format</p>
 
 <div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">line_chart</span> <span class="o">[</span>
-  <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series A"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_a</span><span class="p">},</span>
-  <span class="p">{</span><span class="ss">:name</span> <span class="o">=&gt;</span> <span class="s2">"Series B"</span><span class="p">,</span> <span class="ss">:data</span> <span class="o">=&gt;</span> <span class="n">series_b</span><span class="p">}</span>
+  <span class="p">{</span><span class="nb">name</span><span class="p">:</span> <span class="s2">"Series A"</span><span class="p">,</span> <span class="ss">data</span><span class="p">:</span> <span class="n">series_a</span><span class="p">},</span>
+  <span class="p">{</span><span class="nb">name</span><span class="p">:</span> <span class="s2">"Series B"</span><span class="p">,</span> <span class="ss">data</span><span class="p">:</span> <span class="n">series_b</span><span class="p">}</span>
 <span class="o">]</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
