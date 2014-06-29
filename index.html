@@ -118,6 +118,18 @@ new Chartkick.ColumnChart("chart-3", [["0",32],["1",46],["2",28],["3",21],["4",2
 <div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">geo_chart</span> <span class="no">Medal</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="ss">:country</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="cp">%&gt;</span><span class="x"></span>
 </pre></div>
 
+<p>Timeline</p>
+
+<div id="chart-timeline" style="height: 200px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">
+  Loading...
+</div>
+<script>
+  new Chartkick.Timeline("chart-timeline", [["Washington", "1789-04-29", "1797-03-03"],["Adams", "1797-03-03", "1801-03-03"],["Jefferson", "1801-03-03", "1809-03-03"]]);
+</script>
+
+<div class="highlight highlight-erb"><pre><span class="cp">&lt;%=</span> <span class="n">timeline</span> <span class="o">[[</span><span class="s2">"Washington"</span><span class="p">,</span> <span class="s2">"1789-04-29"</span><span class="p">,</span> <span class="s2">"1797-03-03"</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="s2">"Adams"</span><span class="p">,</span> <span class="s2">"1797-03-03"</span><span class="p">,</span> <span class="s2">"1801-03-03"</span><span class="o">]]</span> <span class="cp">%&gt;</span><span class="x"></span>
+</pre></div>
+
 <p>Multiple series</p>
 
 <div id="chart-7" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: Lucida Grande, Lucida Sans Unicode, Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script>
